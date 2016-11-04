@@ -81,7 +81,8 @@ class Paths extends \SwaggerValidator\Common\CollectionSwagger
             }
         }
 
-        $requestPath   = explode('/', $context->getRequestPath());
+        $requestPath   = explode('/', str_replace(['/app_test.php', '/app_dev.php'], '', $context->getRequestPath()));
+
         $listFindRoute = array();
 
         foreach ($this->keys() as $key) {
