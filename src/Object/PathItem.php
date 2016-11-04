@@ -81,7 +81,7 @@ class PathItem extends \SwaggerValidator\Common\CollectionSwagger
             }
         }
 
-        $currentMethod = $context->getMethod();
+        $currentMethod = strtolower($context->getMethod());
 
         if (isset($this->$currentMethod) && is_object($this->$currentMethod) && ($this->$key instanceof \SwaggerValidator\Object\Operation)) {
             $context->logValidate(get_class($this), __METHOD__, __LINE__);
