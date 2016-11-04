@@ -60,10 +60,6 @@ class TypeCombined extends \SwaggerValidator\Common\CollectionSwagger
     {
         parent::checkJsonObject($context, $jsonData);
 
-        if (count(get_object_vars($jsonData)) > 1) {
-            $context->throwException('Mismatching type of JSON Data received', __METHOD__, __LINE__);
-        }
-
         $keyAnyOf = \SwaggerValidator\Common\FactorySwagger::KEY_ANYOF;
         $keyAllOf = \SwaggerValidator\Common\FactorySwagger::KEY_ALLOF;
         $keyOneOf = \SwaggerValidator\Common\FactorySwagger::KEY_ONEOF;
